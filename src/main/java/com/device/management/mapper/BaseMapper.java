@@ -4,18 +4,18 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface BaseMapper<T, D> {
-    long countByExample(D example);
+public interface BaseMapper<T, E> {
+    long countByExample(E example);
 
-    int deleteByExample(D example);
+    int deleteByExample(E example);
 
     int insert(T record);
 
     int insertSelective(T record);
 
-    List<T> selectByExample(D example);
+    List<T> selectByExample(E example);
 
-    int updateByExampleSelective(@Param("record") T record, @Param("example") D example);
+    int updateByExampleSelective(@Param("record") T record, @Param("example") E example);
 
-    int updateByExample(@Param("record") T record, @Param("example") D example);
+    int updateByExample(@Param("record") T record, @Param("example") E example);
 }
