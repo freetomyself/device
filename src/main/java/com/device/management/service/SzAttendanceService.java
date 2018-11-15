@@ -21,11 +21,11 @@ public class SzAttendanceService {
     public List<SzAttendanceDto> getList(Integer intads) {
         SzAttendanceExample szAttendanceExample = new SzAttendanceExample();
         SzAttendanceExample.Criteria criteria = szAttendanceExample.createCriteria();
-        if (intads.equals(1))
+   /*     if (intads.equals(1))
             criteria.andStateEqualTo();
         if (intads.equals(2))
             criteria.andAppconnectstateBetween();
-
+*/
         szAttendanceExample.or().andStateEqualTo(SzAttendenceStatusType.ONLINE.getState()).andAppconnectstateBetween();
         List<SzAttendance> list = szAttendanceMapper.selectByExample(szAttendanceExample);
         List<SzAttendanceDto> szAttendanceDtos = new ArrayList<>();
