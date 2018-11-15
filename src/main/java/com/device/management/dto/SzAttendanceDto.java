@@ -24,7 +24,8 @@ public class SzAttendanceDto {
         this.state = szAttendance.getState();
         this.clintId = szAttendance.getClintId();
         this.ip = szAttendance.getIp();
-       /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
+
+        /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
             this.createTime = szAttendance*/
     }
 
