@@ -6,28 +6,14 @@ import java.util.Date;
 
 public class SzAttendanceDto {
 
+
     private String ip;
     private String clintId;
-    private Integer schoolId;
-    private String name;
+    private String position;
+    private  String schoolName;
     private Integer state;
     private String version;
     private Date lastloginTime;
-
-    public SzAttendanceDto() {
-
-    }
-
-    public SzAttendanceDto(SzAttendance szAttendance) {
-        this.name = szAttendance.getName();
-        this.schoolId = szAttendance.getSchoolId();
-        this.state = szAttendance.getState();
-        this.clintId = szAttendance.getClintId();
-        this.ip = szAttendance.getIp();
-
-        /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
-            this.createTime = szAttendance*/
-    }
 
     public String getIp() {
         return ip;
@@ -45,20 +31,20 @@ public class SzAttendanceDto {
         this.clintId = clintId;
     }
 
-    public Integer getSchoolId() {
-        return schoolId;
+    public String getPosition() {
+        return position;
     }
 
-    public void setSchoolId(Integer schoolId) {
-        this.schoolId = schoolId;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public String getName() {
-        return name;
+    public String getSchoolName() {
+        return schoolName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
     }
 
     public Integer getState() {
@@ -84,4 +70,23 @@ public class SzAttendanceDto {
     public void setLastloginTime(Date lastloginTime) {
         this.lastloginTime = lastloginTime;
     }
+
+
+    public SzAttendanceDto() {
+
+    }
+
+    public SzAttendanceDto(SzAttendance szAttendance) {
+        this.version = szAttendance.getVersion();
+        this.lastloginTime = szAttendance.getLastloginTime();
+        this.position = szAttendance.getName();
+        this.state = szAttendance.getState();
+        this.clintId = szAttendance.getClintId();
+        this.ip = szAttendance.getIp();
+
+        /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
+            this.createTime = szAttendance*/
+    }
+
+
 }
