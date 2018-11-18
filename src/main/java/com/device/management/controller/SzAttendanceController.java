@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path = "/SzAttendanceManage")
 public class SzAttendanceController {
@@ -19,6 +17,7 @@ public class SzAttendanceController {
     SzAttendanceService szAttendanceService;
 
     @GetMapping("/getAttList")
+    /*@RequestParam(required = false) false 表示可以为空 */
     public ListDto<SzAttendanceDto> getList(@RequestParam("sql") String sql , @RequestParam(required = false) String schoolName,
                                             @RequestParam(required = false) String clintId ,
                                             @RequestParam(required = false) Integer page,

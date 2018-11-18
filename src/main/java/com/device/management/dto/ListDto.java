@@ -1,10 +1,13 @@
 package com.device.management.dto;
-
 import java.util.List;
 
 /**
- * Created By WaHotDog in $date$
+ * @program: manage
+ * @description: 用来处理 数据库数据和分页
+ * @author: WaHotDog 2018-11-18 17:08
  **/
+
+
 public class ListDto<T> {
     private Long total;
     private List<T> rows;
@@ -25,3 +28,4 @@ public class ListDto<T> {
         this.rows = rows;
     }
 }
+

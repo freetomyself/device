@@ -1,16 +1,14 @@
 package com.device.management.mapper;
-
 import com.device.management.dto.SzAttendanceDto;
 import com.device.management.po.SzAttendance;
 import com.device.management.po.SzAttendanceExample;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 public interface SzAttendanceMapper extends BaseMapper<SzAttendance, SzAttendanceExample>{
-
+//sql 查询设备信息
     @Select("<script>"+
             "select s.school_name as schoolName,a.clint_id as clintId, " +
             " a.position as position,a.lastlogin_time as lastloginTime,a.state as state ," +
