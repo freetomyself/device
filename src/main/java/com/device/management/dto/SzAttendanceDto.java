@@ -14,6 +14,15 @@ public class SzAttendanceDto {
     private Integer state;
     private String version;
     private Date lastloginTime;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getIp() {
         return ip;

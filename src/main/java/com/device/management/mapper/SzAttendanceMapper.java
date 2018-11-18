@@ -14,7 +14,13 @@ public interface SzAttendanceMapper extends BaseMapper<SzAttendance, SzAttendanc
     @Select("<script>"+
             "select s.school_name as schoolName,a.clint_id as clintId, " +
             " a.position as position,a.lastlogin_time as lastloginTime,a.state as state ," +
-            " a.version as version,a.ip as ip " +
+            " a.version as version,a.ip as ip, " +
+            " CAST(" +
+            "             CASE  " +
+            "                  WHEN LEN(a.clint_id)=16 " +
+            "                     THEN '班牌'  " +
+            "                  ELSE  '话机' " +
+            "             END AS varchar ) as type "+
             " from xiaoan.SZ_Schema.SZ_Attendance as a " +
             " INNER JOIN xiaoan.SZ_Schema.SZ_School as s " +
             " on a.school_id = s.school_id " +

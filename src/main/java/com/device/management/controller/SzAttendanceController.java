@@ -1,5 +1,6 @@
 package com.device.management.controller;
 
+import com.device.management.dto.ListDto;
 import com.device.management.dto.SzAttendanceDto;
 import com.device.management.service.SzAttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,11 @@ public class SzAttendanceController {
     SzAttendanceService szAttendanceService;
 
     @GetMapping("/getAttList")
-    public List<SzAttendanceDto> getList(@RequestParam("sql") String sql ,@RequestParam(required = false) String schoolName,
-                                         @RequestParam(required = false) String clintId){
-        return szAttendanceService.getAttList(schoolName, clintId, sql);
+    public ListDto<SzAttendanceDto> getList(@RequestParam("sql") String sql , @RequestParam(required = false) String schoolName,
+                                            @RequestParam(required = false) String clintId ,
+                                            @RequestParam(required = false) Integer page,
+                                            @RequestParam(required = false) Integer rows){
+        return szAttendanceService.getAttList(schoolName, clintId, sql , page , rows);
     }
    /* @GetMapping("/getSBList")
     public List<SzAttendanceDto> getList(){
