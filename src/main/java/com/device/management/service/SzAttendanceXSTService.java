@@ -1,8 +1,8 @@
 package com.device.management.service;
 
 import com.device.management.dto.ListDto;
-import com.device.management.dto.SzAttendanceDto;
-import com.device.management.mapper.SzAttendanceMapper;
+import com.device.management.dto.SzAttendanceXSTDto;
+import com.device.management.mapper.SzAttendanceXSTMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +15,18 @@ import java.util.List;
 
 @Service
 @ComponentScan
-public class SzAttendanceService {
+public class SzAttendanceXSTService {
 
     @Autowired
-    SzAttendanceMapper szAttendanceMapper;
+    SzAttendanceXSTMapper szAttendanceMapper;
 /**
  *
  * @param schoolName
  * @param clintId
  */
 //通过自定义的ListDto 接收查询返回数据和当前页和当前行数
-public ListDto<SzAttendanceDto> getAttList(String schoolName, String clintId, String sql, Integer page , Integer rows){
-    List<SzAttendanceDto> szAttendanceDtos = new ArrayList<>();
+public ListDto<SzAttendanceXSTDto> getAttList(String schoolName, String clintId, String sql, Integer page , Integer rows){
+    List<SzAttendanceXSTDto> szAttendanceDtos = new ArrayList<>();
     // 当前页
     int intPage = (page == null || page == 0) ? 1 : page;
     // 每页显示条数
@@ -44,26 +44,26 @@ public ListDto<SzAttendanceDto> getAttList(String schoolName, String clintId, St
     //获取所有数据条数
     long countList = page1.getTotal();
     //将角色装入SzAttendanceDto
-    ListDto<SzAttendanceDto> list = new ListDto<>();
+    ListDto<SzAttendanceXSTDto> list = new ListDto<>();
     //最终通过set 将 数据放入ListDto中 并返回
     list.setTotal(total);
     list.setCountList(countList);
     list.setRows(szAttendanceDtos);
     return list;
 }
-    //    SzAttendanceExample szAttendanceExample = new SzAttendanceExample();
-//    SzAttendanceExample.Criteria criteria = szAttendanceExample.createCriteria();
+    //    SzAttendanceXSTExample szAttendanceExample = new SzAttendanceXSTExample();
+//    SzAttendanceXSTExample.Criteria criteria = szAttendanceExample.createCriteria();
 //    if(!StringUtils.isEmpty(clintId))
 //        criteria.andClintIdLike(clintId);
 
 
 //if(!StringUtils.isEmpty(clintId) && StringUtils.isEmpty(schoolName)){
-//    SzAttendanceExample szAttendanceExample = new SzAttendanceExample();
+//    SzAttendanceXSTExample szAttendanceExample = new SzAttendanceXSTExample();
 //    szAttendanceExample.or().andClintIdLike(clintId);
-//    List<SzAttendance> list = szAttendanceMapper.selectByExample(szAttendanceExample);
+//    List<SzAttendanceXST> list = szAttendanceMapper.selectByExample(szAttendanceExample);
 //    if (!CollectionUtils.isEmpty(list)){
-//        for(SzAttendance szAtt : list){
-//            SzAttendanceDto szAttendanceDto = new SzAttendanceDto(szAtt);
+//        for(SzAttendanceXST szAtt : list){
+//            SzAttendanceXSTDto szAttendanceDto = new SzAttendanceXSTDto(szAtt);
 //            szAttendanceDtos.add(szAttendanceDto);
 //        }
 //    }
