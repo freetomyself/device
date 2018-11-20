@@ -39,12 +39,15 @@ public ListDto<SzAttendanceDto> getAttList(String schoolName, String clintId, St
         page1 = PageHelper.startPage(intPage, number);
         szAttendanceDtos = szAttendanceMapper.querySzAttendance(clintId,schoolName);
     }
-    //获取当前的number
-    long total = page1.getTotal();
+    //获取总的number
+    long total = page1.getTotal()/page1.getPageSize()+1;
+    //获取所有数据条数
+    long countList = page1.getTotal();
     //将角色装入SzAttendanceDto
     ListDto<SzAttendanceDto> list = new ListDto<>();
     //最终通过set 将 数据放入ListDto中 并返回
     list.setTotal(total);
+    list.setCountList(countList);
     list.setRows(szAttendanceDtos);
     return list;
 }

@@ -10,7 +10,17 @@ import java.util.List;
 
 public class ListDto<T> {
     private Long total;
+    private Long countList;
     private List<T> rows;
+
+
+    public Long getCountList() {
+        return countList;
+    }
+
+    public void setCountList(Long countList) {
+        this.countList = countList;
+    }
 
     public Long getTotal() {
         return total;

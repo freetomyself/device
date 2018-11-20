@@ -22,7 +22,7 @@ public interface SzAttendanceMapper extends BaseMapper<SzAttendance, SzAttendanc
             " from xiaoan.SZ_Schema.SZ_Attendance as a " +
             " INNER JOIN xiaoan.SZ_Schema.SZ_School as s " +
             " on a.school_id = s.school_id " +
-            " WHERE a.state != -1 " +
+            " WHERE a.school_id != -1 " +
             "<if test=\"schoolName != null\">" +
             " and s.school_name like #{schoolName}" +
             " </if>"+
