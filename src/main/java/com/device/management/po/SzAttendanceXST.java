@@ -2,7 +2,7 @@ package com.device.management.po;
 
 import java.util.Date;
 
-public class SzAttendance {
+public class SzAttendanceXST {
     private String clintId;
 
     private Integer schoolId;

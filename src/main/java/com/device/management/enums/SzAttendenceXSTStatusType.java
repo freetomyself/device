@@ -1,12 +1,12 @@
 package com.device.management.enums;
 
-public enum  SzAttendenceStatusType {
+public enum SzAttendenceXSTStatusType {
     UNLINE(0,"掉线"),
     ONLINE(1,"在线");
 
     private int state;
     private String message;
-    SzAttendenceStatusType(int state, String message) {
+    SzAttendenceXSTStatusType(int state, String message) {
         this.state = state;
         this.message = message;
     }
@@ -26,7 +26,7 @@ public enum  SzAttendenceStatusType {
         this.message = message;
     }
     public static String getNameByType(int state) {
-        for (SzAttendenceStatusType szAttendenceStatusType : SzAttendenceStatusType.values()) {
+        for (SzAttendenceXSTStatusType szAttendenceStatusType : SzAttendenceXSTStatusType.values()) {
             if (szAttendenceStatusType.getState() == state)
                 return szAttendenceStatusType.getMessage();
         }

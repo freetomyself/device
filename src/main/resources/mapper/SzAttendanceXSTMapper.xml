@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.device.management.mapper.SzAttendanceMapper">
-  <resultMap id="BaseResultMap" type="com.device.management.po.SzAttendance">
+<mapper namespace="com.device.management.mapper.SzAttendanceXSTMapper">
+  <resultMap id="BaseResultMap" type="com.device.management.po.SzAttendanceXST">
     <result column="clint_id" jdbcType="VARCHAR" property="clintId" />
     <result column="school_id" jdbcType="INTEGER" property="schoolId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -89,7 +89,7 @@
     password, minitorInfo, lastlogin_time, box_num, state, clint_type, port, user_type, 
     AppConnectState, AppConnectTime, IsKaoqin, OnlineTime, OfflineTime
   </sql>
-  <select id="selectByExample" parameterType="com.device.management.po.SzAttendanceExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.device.management.po.SzAttendanceXSTExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,13 +103,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.device.management.po.SzAttendanceExample">
+  <delete id="deleteByExample" parameterType="com.device.management.po.SzAttendanceXSTExample">
     delete from SZ_Attendance
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.device.management.po.SzAttendance">
+  <insert id="insert" parameterType="com.device.management.po.SzAttendanceXST">
     insert into SZ_Attendance (clint_id, school_id, name, 
       ip, phone, position, 
       version, isConnection, config, 
@@ -127,7 +127,7 @@
       #{appconnectstate,jdbcType=INTEGER}, #{appconnecttime,jdbcType=TIMESTAMP}, #{iskaoqin,jdbcType=INTEGER}, 
       #{onlinetime,jdbcType=INTEGER}, #{offlinetime,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.device.management.po.SzAttendance">
+  <insert id="insertSelective" parameterType="com.device.management.po.SzAttendanceXST">
     insert into SZ_Attendance
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="clintId != null">
@@ -272,7 +272,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.device.management.po.SzAttendanceExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.device.management.po.SzAttendanceXSTExample" resultType="java.lang.Long">
     select count(*) from SZ_Attendance
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

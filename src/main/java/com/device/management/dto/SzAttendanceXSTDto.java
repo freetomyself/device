@@ -1,10 +1,10 @@
 package com.device.management.dto;
 
-import com.device.management.po.SzAttendance;
+import com.device.management.po.SzAttendanceXST;
 
 import java.util.Date;
 
-public class SzAttendanceDto {
+public class SzAttendanceXSTDto {
 
 
     private String ip;
@@ -81,11 +81,11 @@ public class SzAttendanceDto {
     }
 
 
-    public SzAttendanceDto() {
+    public SzAttendanceXSTDto() {
 
     }
 
-    public SzAttendanceDto(SzAttendance szAttendance) {
+    public SzAttendanceXSTDto(SzAttendanceXST szAttendance) {
         this.version = szAttendance.getVersion();
         this.lastloginTime = szAttendance.getLastloginTime();
         this.position = szAttendance.getName();

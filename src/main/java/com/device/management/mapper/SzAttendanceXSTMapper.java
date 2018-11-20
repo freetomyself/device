@@ -1,13 +1,13 @@
 package com.device.management.mapper;
-import com.device.management.dto.SzAttendanceDto;
-import com.device.management.po.SzAttendance;
-import com.device.management.po.SzAttendanceExample;
+import com.device.management.dto.SzAttendanceXSTDto;
+import com.device.management.po.SzAttendanceXST;
+import com.device.management.po.SzAttendanceXSTExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-public interface SzAttendanceMapper extends BaseMapper<SzAttendance, SzAttendanceExample>{
+public interface SzAttendanceXSTMapper extends BaseMapper<SzAttendanceXST, SzAttendanceXSTExample>{
 //sql 查询设备信息
     @Select("<script>"+
             "select s.school_name as schoolName,a.clint_id as clintId, " +
@@ -31,5 +31,5 @@ public interface SzAttendanceMapper extends BaseMapper<SzAttendance, SzAttendanc
             " </if>"+
             " order by s.school_name "
             +"</script>")
-    List<SzAttendanceDto> querySzAttendance(@Param("clintId") String clintId , @Param("schoolName") String schoolName);
+    List<SzAttendanceXSTDto> querySzAttendance(@Param("clintId") String clintId , @Param("schoolName") String schoolName);
 }
