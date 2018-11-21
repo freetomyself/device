@@ -31,7 +31,8 @@ public class SzAttendanceXSTService {
      */
 //通过自定义的ListDto 接收查询返回数据和当前页和当前行
     public ListDto<SzAttendanceXSTDto> getAttList(String schoolName, String clintId, Integer page , Integer rows){
-        List<SzAttendanceXSTDto> szAttendanceXSTDtos = new ArrayList<>();
+        List<SzAttendanceXSTDto> szAttendanceXSTDtos;
+
         // 当前页
         int intPage = (page == null || page == 0) ? 1 : page;
         // 每页显示条数
@@ -41,8 +42,7 @@ public class SzAttendanceXSTService {
         if (!StringUtils.isEmpty(clintId))clintId = "%"+clintId + "%";
         Page page1 = PageHelper.startPage(intPage, number);
         //使用分页插件
-        szAttendanceXSTDtos = szAttendanceXSTMapper.querySzAttendance(clintId,schoolName);
-
+        szAttendanceXSTDtos = new ArrayList<>(szAttendanceXSTMapper.querySzAttendance(clintId,schoolName));
         //获取总的number
         long total = page1.getTotal()/page1.getPageSize()+1;
         //获取所有数据条数
