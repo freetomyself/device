@@ -34,6 +34,6 @@ public class DynamicDataSourceContextHolder {
      *
      */
     public static boolean containsDataSource(String dataSourceId){
-        return dataSourceId.contains(dataSourceId);
+        return dataSourceIds.contains(dataSourceId);
     }
 }

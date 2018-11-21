@@ -1,23 +1,23 @@
 package com.device.management;
 
+import com.device.management.dataSource.DynamicDataSourceRegister;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 
 @SpringBootApplication
 @Import({
-        DataSourceAutoConfiguration.class
+        DynamicDataSourceRegister.class
 })
 @MapperScan("com.device.management.mapper")
 @EnableScheduling
-@EnableTransactionManagement
-public class ManageApplication {
+
+public class ManageApplication extends SpringApplicationBuilder{
 
     public static void main(String[] args) {
         SpringApplication.run(ManageApplication.class, args);
