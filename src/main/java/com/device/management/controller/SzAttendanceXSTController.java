@@ -16,13 +16,13 @@ public class SzAttendanceXSTController {
     @Autowired
     SzAttendanceXSTService szAttendanceService;
 
-    @GetMapping("/getAttList")
+    @GetMapping("/getAttListXST")
     /*@RequestParam(required = false) false 表示可以为空 */
-    public ListDto<SzAttendanceXSTDto> getList(@RequestParam("sql") String sql , @RequestParam(required = false) String schoolName,
+    public ListDto<SzAttendanceXSTDto> getList(@RequestParam(required = false) String schoolName,
                                                @RequestParam(required = false) String clintId ,
                                                @RequestParam(required = false) Integer page,
                                                @RequestParam(required = false) Integer rows){
-        return szAttendanceService.getAttList(schoolName, clintId, sql , page , rows);
+        return szAttendanceService.getAttList(schoolName, clintId, page , rows);
     }
    /* @GetMapping("/getSBList")
     public List<SzAttendanceXSTDto> getList(){
