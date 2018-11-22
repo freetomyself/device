@@ -37,5 +37,14 @@ public class ListDto<T> {
     public void setRows(List<T> rows) {
         this.rows = rows;
     }
+
+    @Override
+    public String toString() {
+        return "ListDto{" +
+                "total=" + total +
+                ", countList=" + countList +
+                ", rows=" + rows +
+                '}';
+    }
 }
 

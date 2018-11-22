@@ -21,9 +21,6 @@ public class SzAttendanceXSTService {
     @Autowired
     SzAttendanceXSTMapper szAttendanceXSTMapper;
 
-    @Autowired
-    SzAttendanceHXYMapper szAttendanceHXYMapper;
-
     /**
      *
      * @param schoolName
@@ -52,7 +49,11 @@ public class SzAttendanceXSTService {
         //最终通过set 将 数据放入ListDto中 并返回
         list.setTotal(total);
         list.setCountList(countList);
+        System.out.println("###########################################################");
+        System.out.println(list);
         list.setRows(szAttendanceXSTDtos);
+        System.out.println(list.toString());
+        System.out.println(szAttendanceXSTDtos.toString());
         return list;
     }
 //    SzAttendanceXSTExample.Criteria criteria = szAttendanceExample.createCriteria();

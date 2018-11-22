@@ -1,11 +1,27 @@
 package com.device.management.dto;
 
 import com.device.management.po.SzAttendanceXST;
+import org.springframework.util.StringUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SzAttendanceXSTDto {
 
+    @Override
+    public String toString() {
+        return "SzAttendanceXSTDto{" +
+                "ip='" + ip + '\'' +
+                ", clintId='" + clintId + '\'' +
+                ", position='" + position + '\'' +
+                ", schoolName='" + schoolName + '\'' +
+                ", state=" + state +
+                ", version='" + version + '\'' +
+                ", type='" + type + '\'' +
+                ", lastlogintime='" + lastloginTime + '\'' +
+                '}';
+    }
 
     private String ip;
     private String clintId;
@@ -13,8 +29,18 @@ public class SzAttendanceXSTDto {
     private  String schoolName;
     private Integer state;
     private String version;
-    private Date lastloginTime;
+
+    public String getLastlogintime() {
+        return lastloginTime;
+    }
+
+    public void setLastlogintime(String lastlogintime) {
+        this.lastloginTime = lastlogintime;
+    }
+
+    //private Date lastloginTime;
     private String type;
+    private String lastloginTime;
 
     public String getType() {
         return type;
@@ -72,6 +98,7 @@ public class SzAttendanceXSTDto {
         this.version = version;
     }
 
+/*
     public Date getLastloginTime() {
         return lastloginTime;
     }
@@ -80,6 +107,7 @@ public class SzAttendanceXSTDto {
         this.lastloginTime = lastloginTime;
     }
 
+*/
 
     public SzAttendanceXSTDto() {
 
@@ -87,15 +115,19 @@ public class SzAttendanceXSTDto {
 
     public SzAttendanceXSTDto(SzAttendanceXST szAttendance) {
         this.version = szAttendance.getVersion();
-        this.lastloginTime = szAttendance.getLastloginTime();
+        this.lastloginTime = String.valueOf(szAttendance.getLastloginTime());
         this.position = szAttendance.getName();
         this.state = szAttendance.getState();
         this.clintId = szAttendance.getClintId();
         this.ip = szAttendance.getIp();
 
-        /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
-            this.createTime = szAttendance*/
     }
 
+    public static Date stampToDate(Date s) throws ParseException {
+        Date res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        res = simpleDateFormat.parse(String.valueOf(s));
+        return res;
+    }
 
 }
