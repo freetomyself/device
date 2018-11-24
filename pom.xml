@@ -82,11 +82,11 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
         <!--旧的JAXB运行时模块。包含运行时处理所需的源。-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.2.3-1</version>
-        </dependency>
+        </dependency>-->
 
 
         <!-- mybatis -->
@@ -108,11 +108,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>com.device.management</groupId>
             <artifactId>manage</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <!-- 提供便捷
         @Sette、@Getter、@Data、@Log(这是一个泛型注解，具体有很多种形式)、@AllArgsConstructor、@NoArgsConstructor、
 @EqualsAndHashCode、@NonNull、@Cleanup、@ToString、@RequiredArgsConstructor、@Value、@SneakyThrows、@Synchronized-->
