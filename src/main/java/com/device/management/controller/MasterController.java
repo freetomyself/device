@@ -1,17 +1,8 @@
 package com.device.management.controller;
 
 import com.device.management.dto.ListDto;
-import com.device.management.dto.SzAttendanceHXYDto;
-import com.device.management.dto.SzAttendanceXSTDto;
-import com.device.management.dto.SzAttendanceYXTDto;
 import com.device.management.enums.AttType;
-import com.device.management.mapper.SzAttendanceHXYMapper;
-import com.device.management.mapper.SzAttendanceXSTMapper;
-import com.device.management.mapper.SzAttendanceYXTMapper;
-import com.device.management.service.SzAttendanceHXYService;
 import com.device.management.service.SzAttendanceService;
-import com.device.management.service.SzAttendanceXSTService;
-import com.device.management.service.SzAttendanceYXTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

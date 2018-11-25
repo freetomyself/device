@@ -3,6 +3,7 @@ package com.device.management;
 import com.device.management.dataSource.DynamicDataSourceRegister;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -16,7 +17,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 @MapperScan("com.device.management.mapper")
 @EnableScheduling
 
-public class ManageApplication extends SpringApplicationBuilder{
+public class ManageApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ManageApplication.class, args);
