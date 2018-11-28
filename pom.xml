@@ -17,11 +17,11 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.8.RELEASE</version>
     </parent>
-  <!--  <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
-    </parent>-->
+    <!--  <parent>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-parent</artifactId>
+          <version>2.1.0.RELEASE</version>
+      </parent>-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
         <!-- servlet依赖. -->
         <dependency>
@@ -48,20 +48,20 @@
             <artifactId>jstl</artifactId>
         </dependency>
         <!-- tomcat的支持.-->
-       <!-- <dependency>
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
+        <artifactId>druid-spring-boot-starter</artifactId>
+    </dependency>-->
         <!--开启热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,17 +75,22 @@
             <scope>runtime</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc42 -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>sqljdbc42</artifactId>
             <version>6.0.8112</version>
-        </dependency>
+        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
         <!--旧的JAXB运行时模块。包含运行时处理所需的源。-->
-        <!--<dependency>
+        <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.2.3-1</version>
+        </dependency>
+       <!-- <dependency>
+            <groupId>javax.xml</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.1</version>
         </dependency>-->
 
 
@@ -121,10 +126,10 @@
             <artifactId>lombok</artifactId>
             <version>1.14.4</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-core</artifactId>
-        </dependency>
+        </dependency>-->
         <!--分页适用于不正规型数据-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
