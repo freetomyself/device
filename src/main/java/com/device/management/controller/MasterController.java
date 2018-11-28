@@ -4,15 +4,14 @@ import com.device.management.dto.ListDto;
 import com.device.management.enums.AttType;
 import com.device.management.service.SzAttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * author:WaHotDog
  * Created in Date:2018/11/25 0025上午 11:34
  */
+//此注释解决跨域问题
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Manger")
 public class MasterController {
