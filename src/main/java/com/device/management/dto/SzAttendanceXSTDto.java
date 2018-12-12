@@ -16,10 +16,11 @@ public class SzAttendanceXSTDto {
                 ", clintId='" + clintId + '\'' +
                 ", position='" + position + '\'' +
                 ", schoolName='" + schoolName + '\'' +
-                ", state=" + state +
+                ", state='" + state + '\'' +
                 ", version='" + version + '\'' +
                 ", type='" + type + '\'' +
-                ", lastlogintime='" + lastloginTime + '\'' +
+                ", lastloginTime='" + lastloginTime + '\'' +
+                ", state='" + state + '\'' +
                 '}';
     }
 
@@ -27,8 +28,19 @@ public class SzAttendanceXSTDto {
     private String clintId;
     private String position;
     private  String schoolName;
-    private Integer state;
+    private String state;
     private String version;
+    private String type;
+    private String lastloginTime;
+
+
+    public String getLastloginTime() {
+        return lastloginTime;
+    }
+
+    public void setLastloginTime(String lastloginTime) {
+        this.lastloginTime = lastloginTime;
+    }
 
     public String getLastlogintime() {
         return lastloginTime;
@@ -37,10 +49,6 @@ public class SzAttendanceXSTDto {
     public void setLastlogintime(String lastlogintime) {
         this.lastloginTime = lastlogintime;
     }
-
-    //private Date lastloginTime;
-    private String type;
-    private String lastloginTime;
 
     public String getType() {
         return type;
@@ -82,11 +90,11 @@ public class SzAttendanceXSTDto {
         this.schoolName = schoolName;
     }
 
-    public Integer getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(String state) {
         this.state = state;
     }
 
@@ -117,7 +125,6 @@ public class SzAttendanceXSTDto {
         this.version = szAttendance.getVersion();
         this.lastloginTime = String.valueOf(szAttendance.getLastloginTime());
         this.position = szAttendance.getName();
-        this.state = szAttendance.getState();
         this.clintId = szAttendance.getClintId();
         this.ip = szAttendance.getIp();
 

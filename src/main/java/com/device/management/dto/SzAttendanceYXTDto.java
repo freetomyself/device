@@ -26,7 +26,7 @@ public class SzAttendanceYXTDto {
         this.version = szAttendance.getVersion();
         this.lastloginTime = String.valueOf(szAttendance.getLastloginTime());
         this.position = szAttendance.getName();
-        this.state = szAttendance.getState();
+        /*this.state = szAttendance.getState();*/
         this.clintId = szAttendance.getClintId();
         this.ip = szAttendance.getIp();
         /* if (!StrinhUtile.isEmpty(szAttendance.getLastloginTime()))
@@ -37,7 +37,7 @@ public class SzAttendanceYXTDto {
     private String clintId;
     private String position;
     private String schoolName;
-    private Integer state;
+    private String state;
     private String version;
     private String lastloginTime;
     private String type;
@@ -82,11 +82,11 @@ public class SzAttendanceYXTDto {
         this.schoolName = schoolName;
     }
 
-    public Integer getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(String state) {
         this.state = state;
     }
 

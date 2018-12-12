@@ -28,12 +28,15 @@ public class MasterController {
                                                @RequestParam Integer type,
                                                @RequestParam(required = false) Integer page,
                                                @RequestParam(required = false) Integer rows){
-        if (type.equals(AttType.YXT.getState())){
-            return szAttendanceService.getYXTAttList(schoolName , clintId, page , rows );
-        }else if (type.equals(AttType.XST.getState())){
-            return szAttendanceService.getHXYAttList(schoolName, clintId ,page,rows);
-        }else if (type.equals(AttType.HXY.getState())){
+        /*XST(1,"学士通"),
+        HXY(2,"慧校园"),
+        YXT(3,"翼校通"); */
+        if (type.equals(AttType.XST.getState())){
             return szAttendanceService.getXSTAttList(schoolName, clintId, page , rows);
+        }else if (type.equals(AttType.HXY.getState())){
+            return szAttendanceService.getHXYAttList(schoolName, clintId ,page,rows);
+        }else if (type.equals(AttType.YXT.getState())){
+            return szAttendanceService.getYXTAttList(schoolName , clintId, page , rows );
         }
         return new ListDto();
     }

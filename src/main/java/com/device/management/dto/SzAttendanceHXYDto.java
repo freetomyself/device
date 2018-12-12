@@ -24,11 +24,28 @@ public class SzAttendanceHXYDto {
     private String ip;
     private String clintId;
     private String position;
-    private  String schoolName;
-    private Integer state;
+    private String schoolName;
+    /*private String isConnection;*/
     private String version;
     private String lastloginTime;
     private String type;
+    private String state;
+
+   /* public String getIsConnection() {
+        return isConnection;
+    }
+
+    public void setIsConnection(String isConnection) {
+        this.isConnection = isConnection;
+    }*/
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public String getType() {
         return type;
@@ -70,14 +87,6 @@ public class SzAttendanceHXYDto {
         this.schoolName = schoolName;
     }
 
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
     public String getVersion() {
         return version;
     }
@@ -94,16 +103,12 @@ public class SzAttendanceHXYDto {
         this.lastloginTime = lastloginTime;
     }
 
-
-    public SzAttendanceHXYDto() {
-
-    }
-
+    SzAttendanceHXYDto(){}
     public SzAttendanceHXYDto(SzAttendanceHXY szAttendance) {
         this.version = szAttendance.getVersion();
         this.lastloginTime = String.valueOf(szAttendance.getLastloginTime());
         this.position = szAttendance.getName();
-        this.state = szAttendance.getState();
+        /*this.isConnection = String.valueOf(szAttendance.getIsconnection());*/
         this.clintId = szAttendance.getClintId();
         this.ip = szAttendance.getIp();
 

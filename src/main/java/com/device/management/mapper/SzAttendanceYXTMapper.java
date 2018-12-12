@@ -12,13 +12,18 @@ public interface SzAttendanceYXTMapper extends BaseMapper<SzAttendanceYXT, SzAtt
 
     //查询语句
     @Select("<script>" +
-            "select DISTINCT s.deptName as schoolName,a.clint_id as clintId,a.position,a.lastlogin_time as lastloginTime,a.state,a.version,a.ip, " +
-            " CAST( " +
+            "select DISTINCT s.deptName as schoolName,a.clint_id as clintId,a.position,a.lastlogin_time as lastloginTime," +
+            " (CASE  " +
+            "WHEN a.isConnection=0  " +
+            "  THEN '掉线'  " +
+            "WHEN a.isConnection=1  " +
+            "  THEN '在线'  " +
+            "END  ) as state,a.version,a.ip, " +
             "             CASE " +
             "                  WHEN LEN(a.clint_id)>15  " +
-            "                     THEN '班牌'  " +
+            "                     THEN ''  " +
             "                  ELSE  '话机' " +
-            "             END AS varchar ) as type " +
+            "             END as type " +
             "from NewSZYXT.dbo.Attendance as a " +
             " LEFT  JOIN SZYXT.dbo.Agency as s " +
             " on a.school_id = s.DeptID where s.deptName !='1' " +
